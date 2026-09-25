@@ -16,6 +16,10 @@ spec:
       labels:
         app: deploily-back
     spec:
+      hostAliases:
+        - ip: "10.96.12.205"
+          hostnames:
+            - "auth.deploily.local"
       containers:
         - image: ghcr.io/deploily/deploily-backend:main
           imagePullPolicy: Always
@@ -41,32 +45,32 @@ spec:
             - name: FLASK_DEBUG
               value: ""
             - name: SQLALCHEMY_DATABASE_URI
-              value: "postgresql://postgres:postgres@postgres.deploily.svc.cluster.local:5432/deploily"
+              value: "postgresql://deploily:deploily@postgres.deploily.svc.cluster.local:5432/deploily"
             - name: APP_FOLDER
               value: app
 
             - name: KEYKCLOAK_URL
-              value: http://keycloak.deploily.svc.cluster.local:8080
+              value: http://auth.deploily.local
             - name: KEYCLOAK_REALM_NAME
               value: deploily
             - name: KEYCLOAK_CLIENT_SECRET
-              value: ".."
+              value: 35hhrgSoqQee2pDEu7vBToejT4Y9t7uK
             - name: KEYCLOAK_CLIENT_ID
               value: deploily
 
 
             - name: MAIL_HOST
-              value: "..."
+              value: "smtp.gmail.com"
             - name: MAIL_PORT
-              value: "..."
+              value: "465"
             - name: MAIL_USER
-              value: "..."
+              value: "naoufel88.chementel@gmail.com"
             - name: MAIL_PASS
-              value: "..."
+              value: "brdf pgua orhc selm"
             - name: NOTIFICATION_EMAIL
-              value: "..."
+              value: "naoufel88.chementel@gmail.com"
             - name: SUPPORT_EMAIL
-              value: "..."
+              value: "testmailer@transformatek.dz"
 
             - name: CACHE_TYPE
               value: "..."

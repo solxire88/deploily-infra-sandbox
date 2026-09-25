@@ -41,7 +41,7 @@ spec:
             - name: FLASK_DEBUG
               value: ""
             - name: SQLALCHEMY_DATABASE_URI
-              value: "postgresql://postgres:postgres@postgres.deploily.svc.cluster.local:5432/deploily"
+              value: "postgresql://deploily:deploily@postgres.deploily.svc.cluster.local:5432/deploily"
             - name: APP_FOLDER
               value: app
 
@@ -55,17 +55,17 @@ spec:
               value: deploily
 
             - name: MAIL_HOST
-              value: "..."
+              value: "smtp.gmail.com"
             - name: MAIL_PORT
-              value: "..."
+              value: "465"
             - name: MAIL_USER
-              value: "..."
+              value: "naoufel88.chementel@gmail.com"
             - name: MAIL_PASS
-              value: "..."
+              value: "brdf pgua orhc selm"
             - name: NOTIFICATION_EMAIL
-              value: "..."
+              value: "naoufel88.chementel@gmail.com"
             - name: SUPPORT_EMAIL
-              value: "..."
+              value: "testmailer@transformatek.dz"
 
             - name: CACHE_TYPE
               value: "..."
