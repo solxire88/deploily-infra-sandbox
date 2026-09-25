@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: deploily
+  namespace: deploily
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: deploily.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: deploily-back
+                port:
+                  number: 5000
+    - host: auth.deploily.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: keycloak
+                port:
+                  number: 8080
